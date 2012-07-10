@@ -1,0 +1,453 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		201D546F15ACE53A0069ECC2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 201D546E15ACE53A0069ECC2 /* UIKit.framework */; };
+		201D547115ACE53A0069ECC2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 201D547015ACE53A0069ECC2 /* Foundation.framework */; };
+		201D547315ACE53A0069ECC2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 201D547215ACE53A0069ECC2 /* CoreGraphics.framework */; };
+		201D547915ACE53A0069ECC2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 201D547715ACE53A0069ECC2 /* InfoPlist.strings */; };
+		201D547B15ACE53A0069ECC2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 201D547A15ACE53A0069ECC2 /* main.m */; };
+		201D547F15ACE53A0069ECC2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 201D547E15ACE53A0069ECC2 /* AppDelegate.m */; };
+		201D548215ACE53A0069ECC2 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 201D548015ACE53A0069ECC2 /* MainStoryboard.storyboard */; };
+		201D548515ACE53A0069ECC2 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 201D548415ACE53A0069ECC2 /* MasterViewController.m */; };
+		201D548815ACE53A0069ECC2 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 201D548715ACE53A0069ECC2 /* DetailViewController.m */; };
+		201D549015ACE53A0069ECC2 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 201D548F15ACE53A0069ECC2 /* SenTestingKit.framework */; };
+		201D549115ACE53A0069ECC2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 201D546E15ACE53A0069ECC2 /* UIKit.framework */; };
+		201D549215ACE53A0069ECC2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 201D547015ACE53A0069ECC2 /* Foundation.framework */; };
+		201D549A15ACE53A0069ECC2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 201D549815ACE53A0069ECC2 /* InfoPlist.strings */; };
+		201D549D15ACE53A0069ECC2 /* ios_learnable_finalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 201D549C15ACE53A0069ECC2 /* ios_learnable_finalTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		201D549315ACE53A0069ECC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 201D546115ACE53A0069ECC2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 201D546915ACE53A0069ECC2;
+			remoteInfo = "ios-learnable-final";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		201D546A15ACE53A0069ECC2 /* ios-learnable-final.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-learnable-final.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		201D546E15ACE53A0069ECC2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		201D547015ACE53A0069ECC2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		201D547215ACE53A0069ECC2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		201D547615ACE53A0069ECC2 /* ios-learnable-final-Info.plist */ = {isa = PBXFileReference; path = "ios-learnable-final-Info.plist"; sourceTree = "<group>"; };
+		201D547815ACE53A0069ECC2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		201D547A15ACE53A0069ECC2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		201D547C15ACE53A0069ECC2 /* ios-learnable-final-Prefix.pch */ = {isa = PBXFileReference; path = "ios-learnable-final-Prefix.pch"; sourceTree = "<group>"; };
+		201D547D15ACE53A0069ECC2 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		201D547E15ACE53A0069ECC2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		201D548115ACE53A0069ECC2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		201D548315ACE53A0069ECC2 /* MasterViewController.h */ = {isa = PBXFileReference; path = MasterViewController.h; sourceTree = "<group>"; };
+		201D548415ACE53A0069ECC2 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		201D548615ACE53A0069ECC2 /* DetailViewController.h */ = {isa = PBXFileReference; path = DetailViewController.h; sourceTree = "<group>"; };
+		201D548715ACE53A0069ECC2 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		201D548E15ACE53A0069ECC2 /* ios-learnable-finalTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-learnable-finalTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		201D548F15ACE53A0069ECC2 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		201D549715ACE53A0069ECC2 /* ios-learnable-finalTests-Info.plist */ = {isa = PBXFileReference; path = "ios-learnable-finalTests-Info.plist"; sourceTree = "<group>"; };
+		201D549915ACE53A0069ECC2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		201D549B15ACE53A0069ECC2 /* ios_learnable_finalTests.h */ = {isa = PBXFileReference; path = ios_learnable_finalTests.h; sourceTree = "<group>"; };
+		201D549C15ACE53A0069ECC2 /* ios_learnable_finalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ios_learnable_finalTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		201D546715ACE53A0069ECC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				201D546F15ACE53A0069ECC2 /* UIKit.framework in Frameworks */,
+				201D547115ACE53A0069ECC2 /* Foundation.framework in Frameworks */,
+				201D547315ACE53A0069ECC2 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		201D548A15ACE53A0069ECC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				201D549015ACE53A0069ECC2 /* SenTestingKit.framework in Frameworks */,
+				201D549115ACE53A0069ECC2 /* UIKit.framework in Frameworks */,
+				201D549215ACE53A0069ECC2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		201D545F15ACE53A0069ECC2 = {
+			isa = PBXGroup;
+			children = (
+				201D547415ACE53A0069ECC2 /* ios-learnable-final */,
+				201D549515ACE53A0069ECC2 /* ios-learnable-finalTests */,
+				201D546D15ACE53A0069ECC2 /* Frameworks */,
+				201D546B15ACE53A0069ECC2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		201D546B15ACE53A0069ECC2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				201D546A15ACE53A0069ECC2 /* ios-learnable-final.app */,
+				201D548E15ACE53A0069ECC2 /* ios-learnable-finalTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		201D546D15ACE53A0069ECC2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				201D546E15ACE53A0069ECC2 /* UIKit.framework */,
+				201D547015ACE53A0069ECC2 /* Foundation.framework */,
+				201D547215ACE53A0069ECC2 /* CoreGraphics.framework */,
+				201D548F15ACE53A0069ECC2 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		201D547415ACE53A0069ECC2 /* ios-learnable-final */ = {
+			isa = PBXGroup;
+			children = (
+				201D547D15ACE53A0069ECC2 /* AppDelegate.h */,
+				201D547E15ACE53A0069ECC2 /* AppDelegate.m */,
+				201D548015ACE53A0069ECC2 /* MainStoryboard.storyboard */,
+				201D548315ACE53A0069ECC2 /* MasterViewController.h */,
+				201D548415ACE53A0069ECC2 /* MasterViewController.m */,
+				201D548615ACE53A0069ECC2 /* DetailViewController.h */,
+				201D548715ACE53A0069ECC2 /* DetailViewController.m */,
+				201D547515ACE53A0069ECC2 /* Supporting Files */,
+			);
+			path = "ios-learnable-final";
+			sourceTree = "<group>";
+		};
+		201D547515ACE53A0069ECC2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				201D547615ACE53A0069ECC2 /* ios-learnable-final-Info.plist */,
+				201D547715ACE53A0069ECC2 /* InfoPlist.strings */,
+				201D547A15ACE53A0069ECC2 /* main.m */,
+				201D547C15ACE53A0069ECC2 /* ios-learnable-final-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		201D549515ACE53A0069ECC2 /* ios-learnable-finalTests */ = {
+			isa = PBXGroup;
+			children = (
+				201D549B15ACE53A0069ECC2 /* ios_learnable_finalTests.h */,
+				201D549C15ACE53A0069ECC2 /* ios_learnable_finalTests.m */,
+				201D549615ACE53A0069ECC2 /* Supporting Files */,
+			);
+			path = "ios-learnable-finalTests";
+			sourceTree = "<group>";
+		};
+		201D549615ACE53A0069ECC2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				201D549715ACE53A0069ECC2 /* ios-learnable-finalTests-Info.plist */,
+				201D549815ACE53A0069ECC2 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		201D546915ACE53A0069ECC2 /* ios-learnable-final */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 201D54A015ACE53A0069ECC2 /* Build configuration list for PBXNativeTarget "ios-learnable-final" */;
+			buildPhases = (
+				201D546615ACE53A0069ECC2 /* Sources */,
+				201D546715ACE53A0069ECC2 /* Frameworks */,
+				201D546815ACE53A0069ECC2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ios-learnable-final";
+			productName = "ios-learnable-final";
+			productReference = 201D546A15ACE53A0069ECC2 /* ios-learnable-final.app */;
+			productType = "com.apple.product-type.application";
+		};
+		201D548D15ACE53A0069ECC2 /* ios-learnable-finalTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 201D54A315ACE53A0069ECC2 /* Build configuration list for PBXNativeTarget "ios-learnable-finalTests" */;
+			buildPhases = (
+				201D548915ACE53A0069ECC2 /* Sources */,
+				201D548A15ACE53A0069ECC2 /* Frameworks */,
+				201D548B15ACE53A0069ECC2 /* Resources */,
+				201D548C15ACE53A0069ECC2 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				201D549415ACE53A0069ECC2 /* PBXTargetDependency */,
+			);
+			name = "ios-learnable-finalTests";
+			productName = "ios-learnable-finalTests";
+			productReference = 201D548E15ACE53A0069ECC2 /* ios-learnable-finalTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		201D546115ACE53A0069ECC2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = Learnable;
+			};
+			buildConfigurationList = 201D546415ACE53A0069ECC2 /* Build configuration list for PBXProject "ios-learnable-final" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 201D545F15ACE53A0069ECC2;
+			productRefGroup = 201D546B15ACE53A0069ECC2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				201D546915ACE53A0069ECC2 /* ios-learnable-final */,
+				201D548D15ACE53A0069ECC2 /* ios-learnable-finalTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		201D546815ACE53A0069ECC2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				201D547915ACE53A0069ECC2 /* InfoPlist.strings in Resources */,
+				201D548215ACE53A0069ECC2 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		201D548B15ACE53A0069ECC2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				201D549A15ACE53A0069ECC2 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		201D548C15ACE53A0069ECC2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		201D546615ACE53A0069ECC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				201D547B15ACE53A0069ECC2 /* main.m in Sources */,
+				201D547F15ACE53A0069ECC2 /* AppDelegate.m in Sources */,
+				201D548515ACE53A0069ECC2 /* MasterViewController.m in Sources */,
+				201D548815ACE53A0069ECC2 /* DetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		201D548915ACE53A0069ECC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				201D549D15ACE53A0069ECC2 /* ios_learnable_finalTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		201D549415ACE53A0069ECC2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 201D546915ACE53A0069ECC2 /* ios-learnable-final */;
+			targetProxy = 201D549315ACE53A0069ECC2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		201D547715ACE53A0069ECC2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				201D547815ACE53A0069ECC2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		201D548015ACE53A0069ECC2 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				201D548115ACE53A0069ECC2 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		201D549815ACE53A0069ECC2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				201D549915ACE53A0069ECC2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		201D549E15ACE53A0069ECC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		201D549F15ACE53A0069ECC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		201D54A115ACE53A0069ECC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ios-learnable-final/ios-learnable-final-Prefix.pch";
+				INFOPLIST_FILE = "ios-learnable-final/ios-learnable-final-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		201D54A215ACE53A0069ECC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ios-learnable-final/ios-learnable-final-Prefix.pch";
+				INFOPLIST_FILE = "ios-learnable-final/ios-learnable-final-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		201D54A415ACE53A0069ECC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ios-learnable-final.app/ios-learnable-final";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ios-learnable-final/ios-learnable-final-Prefix.pch";
+				INFOPLIST_FILE = "ios-learnable-finalTests/ios-learnable-finalTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		201D54A515ACE53A0069ECC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ios-learnable-final.app/ios-learnable-final";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ios-learnable-final/ios-learnable-final-Prefix.pch";
+				INFOPLIST_FILE = "ios-learnable-finalTests/ios-learnable-finalTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		201D546415ACE53A0069ECC2 /* Build configuration list for PBXProject "ios-learnable-final" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				201D549E15ACE53A0069ECC2 /* Debug */,
+				201D549F15ACE53A0069ECC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		201D54A015ACE53A0069ECC2 /* Build configuration list for PBXNativeTarget "ios-learnable-final" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				201D54A115ACE53A0069ECC2 /* Debug */,
+				201D54A215ACE53A0069ECC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		201D54A315ACE53A0069ECC2 /* Build configuration list for PBXNativeTarget "ios-learnable-finalTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				201D54A415ACE53A0069ECC2 /* Debug */,
+				201D54A515ACE53A0069ECC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 201D546115ACE53A0069ECC2 /* Project object */;
+}
