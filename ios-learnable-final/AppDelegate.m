@@ -7,17 +7,23 @@
 //
 
 #import "AppDelegate.h"
+#import "ModalViewController.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     // Override point for customization after application launch.
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
     UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
     splitViewController.delegate = (id)navigationController.topViewController;
+    [self.window makeKeyAndVisible];
+    //PRESENT MODALVC
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    ModalViewController *modalVC = [storyboard instantiateViewControllerWithIdentifier:@"ModalViewController"];
+    [modalVC setModalPresentationStyle:UIModalPresentationFullScreen];
+    [splitViewController presentModalViewController:modalVC animated:YES];
     return YES;
 }
 							
