@@ -23,7 +23,7 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     ModalViewController *modalVC = [storyboard instantiateViewControllerWithIdentifier:@"ModalViewController"];
     [modalVC setModalPresentationStyle:UIModalPresentationFullScreen];
-    [splitViewController presentModalViewController:modalVC animated:YES];
+   // [splitViewController presentModalViewController:modalVC animated:YES];
     return YES;
 }
 							

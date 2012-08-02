@@ -66,20 +66,46 @@
 }
 
 -(IBAction)userWillRegister{
-    
-    //1. CALL ASIHTTP & GET DICT
-    [self callASIHTTP];
+    // Create uniqueIdentifier
+    //UIDevice *device = [UIDevice currentDevice];
+    //NSString *uniqueIdentifier = [device uniqueIdentifier];
+    //1. Get the LOGIN errorsDictionary
+    NSDictionary *errorsDict = [self addUser:userName.text withPass:userPass.text withAddress:userEmail.text];
+    //2. if dictcount = 1 then dismiss && = 5926, then OK
+    if ([[errorsDict objectForKey:@"code1"] intValue] == 5926) {
+        NSLog(@"yeay");
+        //If all is well, then store userDefaults
+        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+        [prefs setObject:userName.text forKey:@"storedUser"];
+        [prefs setObject:userPass.text forKey:@"storedPass"];
+        [prefs synchronize];
+        //Dismis ModalVC after users first login
+        [self dismissModalViewControllerAnimated:YES];
+    } else {
+        NSLog(@"Errors");
+        // extract nsdict
+        NSMutableString *resultString = [NSMutableString string];
+        for (NSString* key in [errorsDict allKeys]){
+            if ([resultString length]>0)
+                [resultString appendString:@"&"];
+            [resultString appendFormat:@"%@=%@", key, [errorsDict objectForKey:key]];
+        }
+        NSLog(@"rS:%@",resultString);
+        //Add UIAlertView
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Check your user,pass or email" message:resultString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+        [alertView release];
+    }
 }
-
--(NSString*)checkUserLogin:(NSString *)loginUsuario withPass:(NSString *)loginClave{
+-(NSString*)checkUserLogin:(NSString *)loginUser withPass:(NSString *)loginPass{
     //CREATE URL TO SEND
-    NSString *urlString = [NSString stringWithFormat:@"username=%@&password=%@",loginUsuario,loginClave];
+    NSString *urlString = [NSString stringWithFormat:@"username=%@&password=%@",loginUser,loginPass];
     NSLog(@"login string:%@",urlString);
     //POST THE STRING
     NSData *postData = [urlString dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
     NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
     NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://iospart2/login/checklogin.php"]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.yourserver.com/learnable/login2/checklogin.php"]];
     [request setURL:url];
     [request setHTTPMethod:@"POST"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
@@ -107,7 +133,7 @@
     NSData *postData = [urlString dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
     NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
     NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://iospart2/login/user_add_save.php"]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.yourserver.com/learnable/login2/user_add_save.php"]];
     [request setURL:url];
     [request setHTTPMethod:@"POST"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
@@ -119,83 +145,9 @@
     // We should probably be parsing the data returned by this call, for now just check the error.
     NSData *myData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     NSError *outError = NULL;
-    NSLog(@"My response data: %@", [[NSString alloc] initWithData:myData encoding:NSASCIIStringEncoding]);
     NSDictionary *tempDict = [NSDictionary dictionaryWithJSONData:myData error:&outError];
     //NSString *string=[[NSString alloc] initWithData:myData encoding:NSUTF8StringEncoding ];
     NSLog(@"Dict of errors:%@",tempDict);
     return tempDict;
 }
-
--(void)callASIHTTP{
-    
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.yourserver.com/learnable/login/user_add_save.php"]];    
-    
-    // Upload an NSData instance
-    NSData *imageData = UIImageJPEGRepresentation(self.pickedImage.image, 90);
-    
-    __block ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
-    [request addPostValue:self.userName.text forKey:@"username"];
-    [request addPostValue:self.userPass.text forKey:@"password"];
-    [request addPostValue:self.userEmail.text forKey:@"email"];
-    NSString *filenameString = [NSString stringWithFormat:@"%@.jpg",self.userName.text];
-    [request addData:imageData withFileName:filenameString andContentType:@"image/jpeg" forKey:@"photo"];
-    
-    //completion blocks
-    [request setCompletionBlock:^{
-        NSString *responseString = [request responseString];
-        if (responseString == nil) {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:responseString message:responseString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            [alertView show];
-            [alertView release];
-        }
-        // Use when fetching binary data
-        NSError *outError = NULL;
-        
-        NSData *responseData = [request responseData];
-        NSDictionary *tempDict = [NSDictionary dictionaryWithJSONData:responseData error:&outError];
-        
-        //Test if server response merits dismissing the modalvc
-        //2. if dictcount = 1 then dismiss && = 5926, then OK
-        if ([[tempDict objectForKey:@"code1"] intValue] == 5926) {
-            NSLog(@"yeay");
-            //If all is well, then store userDefaults
-            NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-            [prefs setObject:userName.text forKey:@"storedUser"];
-            [prefs setObject:userPass.text forKey:@"storedPass"];
-            [prefs synchronize];
-            //Add UIAlertView
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"AllOK" message:@"AllOK" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            [alertView show];
-            [alertView release];
-            //Dismis ModalVC after users first login
-            [self dismissModalViewControllerAnimated:YES];
-        } else {
-            NSLog(@"Errors");
-            // extract nsdict
-            NSMutableString *resultString = [NSMutableString string];
-            for (NSString* key in [tempDict allKeys]){
-                if ([resultString length]>0)
-                    [resultString appendString:@"&"];
-                [resultString appendFormat:@"%@=%@", key, [tempDict objectForKey:key]];
-            }
-            NSLog(@"rS:%@",resultString);
-            //Add UIAlertView
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:resultString message:resultString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            [alertView show];
-            [alertView release];
-            [self dismissModalViewControllerAnimated:YES];
-            
-        }
-        
-        NSLog(@"Dict of errors:%@",tempDict);
-    }];
-    [request setFailedBlock:^{
-        NSError *error = [request error];
-        NSLog(@"Error: %@", error.localizedDescription);
-    }];
-    
-    [request startAsynchronous];
-    
-}
-
 @end

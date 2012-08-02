@@ -5,6 +5,8 @@
 //  Created by Mal Curtis on 11/07/12.
 //  Copyright (c) 2012 Learnable. All rights reserved.
 //
+#define kfetchQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+
 
 #import "DetailViewController.h"
 
@@ -40,6 +42,7 @@
     // Update the user interface for the detail item.
 
     if (self.detailItem) {
+        
         self.detailDescriptionLabel.text = [self.detailItem description];
     }
 }
@@ -49,6 +52,12 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
+    self.title = [self.detailItem objectForKey:@"username"];
+    NSString *urlString = [NSString stringWithFormat:@"http://www.yourserver.com/learnable/login/images/%@",[self.detailItem objectForKey:@"photo"]];
+    
+    NSURL *url = [NSURL URLWithString:urlString];
+    [self gcdCallForURL:url];
+    NSLog(@"url is %@", url);
 }
 
 - (void)viewDidUnload

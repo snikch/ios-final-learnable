@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-//#import "SantiappsHelper.h"
+#import "SantiappsHelper.h"
 //#import "PopoverViewController.h"
 
 @interface ModalViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>{
@@ -20,6 +20,7 @@
     
     NSURLConnection *myConnection;
     NSMutableData *incomingPostData;
+    NSDictionary *errorsDict;
     
     //for image picking
     UIImagePickerController* imagePickerController;
@@ -35,7 +36,7 @@
 @property (nonatomic,retain) IBOutlet UITextField *userPass;
 @property (nonatomic,retain) IBOutlet UITextField *userEmail;
 @property (nonatomic,retain) UIImageView *pickedImage;
-
+@property (nonatomic,retain) NSDictionary *errorsDict;
 //for image picking
 @property (nonatomic,retain) UIImagePickerController *imagePickerController;
 @property (nonatomic, retain) UIPopoverController *popoverController;
@@ -51,4 +52,5 @@
 //for image picking
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info;
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker;
+
 @end

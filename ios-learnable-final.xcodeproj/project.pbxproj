@@ -88,6 +88,8 @@
 		20AAFBB415B8F66000049BF5 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AAFB3515B8F42600049BF5 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		20AAFBB515B8F68000049BF5 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AAFB3815B8F42600049BF5 /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		20AAFBB615B8F68600049BF5 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AAFB3A15B8F42600049BF5 /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		20B0B66815C221C800ACB7A9 /* SantiappsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B0B66715C221C800ACB7A9 /* SantiappsHelper.m */; };
+		20B0B66915C2226400ACB7A9 /* SantiappsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B0B66715C221C800ACB7A9 /* SantiappsHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -250,6 +252,8 @@
 		20AAFB8515B8F42600049BF5 /* StressTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StressTests.m; sourceTree = "<group>"; };
 		20AAFBAF15B8F62000049BF5 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		20AAFBB015B8F62000049BF5 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		20B0B66615C221C800ACB7A9 /* SantiappsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SantiappsHelper.h; sourceTree = "<group>"; };
+		20B0B66715C221C800ACB7A9 /* SantiappsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SantiappsHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,7 +311,6 @@
 		201D546D15ACE53A0069ECC2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				205CB1ED15ACEF1B00954D79 /* Source */,
 				201D54B615ACE68F0069ECC2 /* libz.1.2.5.dylib */,
 				201D54B415ACE6740069ECC2 /* Security.framework */,
 				201D54B215ACE66F0069ECC2 /* MessageUI.framework */,
@@ -329,9 +332,12 @@
 		201D547415ACE53A0069ECC2 /* ios-learnable-final */ = {
 			isa = PBXGroup;
 			children = (
+				205CB1ED15ACEF1B00954D79 /* Source */,
 				20AAFB3215B8F41A00049BF5 /* ASIHttpRequest */,
 				201D547D15ACE53A0069ECC2 /* AppDelegate.h */,
 				201D547E15ACE53A0069ECC2 /* AppDelegate.m */,
+				20B0B66615C221C800ACB7A9 /* SantiappsHelper.h */,
+				20B0B66715C221C800ACB7A9 /* SantiappsHelper.m */,
 				201D55A315ACEAE20069ECC2 /* ModalViewController.h */,
 				201D55A415ACEAE20069ECC2 /* ModalViewController.m */,
 				201D548015ACE53A0069ECC2 /* MainStoryboard.storyboard */,
@@ -394,7 +400,8 @@
 				205CB1F915ACEF1B00954D79 /* Extensions */,
 				205CB1FE15ACEF1B00954D79 /* JSON */,
 			);
-			path = Source;
+			name = Source;
+			path = ../Source;
 			sourceTree = "<group>";
 		};
 		205CB1F015ACEF1B00954D79 /* Experimental */ = {
@@ -685,6 +692,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20B0B66915C2226400ACB7A9 /* SantiappsHelper.m in Sources */,
 				20AAFBB615B8F68600049BF5 /* ASIDataDecompressor.m in Sources */,
 				20AAFBB515B8F68000049BF5 /* ASIDataCompressor.m in Sources */,
 				20AAFBB415B8F66000049BF5 /* ASIAuthenticationDialog.m in Sources */,
@@ -753,6 +761,7 @@
 				20AAFBA815B8F42600049BF5 /* PerformanceTests.m in Sources */,
 				20AAFBA915B8F42600049BF5 /* ProxyTests.m in Sources */,
 				20AAFBAA15B8F42600049BF5 /* StressTests.m in Sources */,
+				20B0B66815C221C800ACB7A9 /* SantiappsHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -819,7 +828,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -845,7 +854,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;

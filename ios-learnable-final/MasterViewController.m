@@ -9,6 +9,7 @@
 #import "MasterViewController.h"
 
 #import "DetailViewController.h"
+#import "SantiappsHelper.h"
 
 @interface MasterViewController () {
     NSMutableArray *_objects;
@@ -17,12 +18,16 @@
 
 @implementation MasterViewController
 
-@synthesize detailViewController = _detailViewController;
+@synthesize detailViewController = _detailViewController, usersArray;
 
 - (void)awakeFromNib
 {
     self.clearsSelectionOnViewWillAppear = NO;
     self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
+    //fetch our array of users
+    usersArray = [SantiappsHelper fetchUsers];
+    NSLog(@"our array is %@", usersArray);
+    
     [super awakeFromNib];
 }
 
@@ -67,7 +72,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _objects.count;
+    return self.usersArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -75,7 +80,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
 
     NSDate *object = [_objects objectAtIndex:indexPath.row];
-    cell.textLabel.text = [object description];
+    cell.textLabel.text = [[self.usersArray objectAtIndex:indexPath.row] objectForKey:@"username"];
     return cell;
 }
 
@@ -113,8 +118,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDate *object = [_objects objectAtIndex:indexPath.row];
-    self.detailViewController.detailItem = object;
+    self.detailViewController.detailItem = [self.usersArray objectAtIndex:indexPath.row];
 }
 
 @end
